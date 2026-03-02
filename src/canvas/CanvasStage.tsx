@@ -192,7 +192,7 @@ const CanvasStage: React.FC<CanvasStageProps> = ({ containerRef }) => {
         if (activeTool === 'arrow') addShape({ ...base, type: 'arrow', x: pos.x, y: pos.y, x2: pos.x, y2: pos.y });
     }, [activeTool, getWorldPos, strokeColor, fillColor, strokeWidth, roughness, opacity, fontSize, addShape, deleteShape, setSelectedIds, openTextEditor]);
 
-    const handleMouseMove = useCallback((_e: Konva.KonvaEventObject<MouseEvent>) => {
+    const handleMouseMove = useCallback(() => {
         if (isPanning) {
             const p = stageRef.current?.getPointerPosition();
             if (!p) return;

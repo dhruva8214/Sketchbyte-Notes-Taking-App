@@ -5,9 +5,10 @@ import { exportPNG, exportSVG } from '../utils/exportImage';
 import { exportJSON, importJSON } from '../utils/saveLoad';
 import Konva from 'konva';
 import {
-    FiDownload, FiUpload, FiImage, FiCode, FiMenu, FiLogOut, FiUser
+    FiDownload, FiUpload, FiImage, FiCode, FiMenu, FiLogOut, FiUser, FiSun, FiMoon
 } from 'react-icons/fi';
 import { useAuthStore } from '../store/authStore';
+import { useThemeStore } from '../store/themeStore';
 import { signOut } from '../firebase/authService';
 
 interface HeaderProps {
@@ -19,6 +20,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onOpenTemplates }) => 
     const { activeBoardId, boards, renameBoard } = useBoardStore();
     const { shapes, loadShapes } = useShapesStore();
     const { user } = useAuthStore();
+    const { theme, toggleTheme } = useThemeStore();
     const [isEditingName, setIsEditingName] = useState(false);
     const [exportOpen, setExportOpen] = useState(false);
     const importRef = useRef<HTMLInputElement>(null);
@@ -134,6 +136,10 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onOpenTemplates }) => 
                 </div>
 
                 <div className="header-divider" />
+
+                <button className="header-btn theme-toggle-btn" onClick={toggleTheme} title="Toggle Theme">
+                    {theme === 'dark' ? <FiSun /> : <FiMoon />}
+                </button>
 
                 <div className="header-user-profile">
                     <div className="header-avatar">

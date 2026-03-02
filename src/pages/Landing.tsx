@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useThemeStore } from '../store/themeStore';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
 const Landing: React.FC = () => {
     const navigate = useNavigate();
+    const { theme, toggleTheme } = useThemeStore();
 
     return (
         <div className="landing">
@@ -15,6 +18,9 @@ const Landing: React.FC = () => {
                 <div className="landing-nav-links">
                     <a href="#features">Features</a>
                     <a href="#templates">Templates</a>
+                    <button className="theme-toggle" onClick={toggleTheme} title="Toggle Theme" style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', fontSize: '18px', padding: '4px' }}>
+                        {theme === 'dark' ? <FiSun /> : <FiMoon />}
+                    </button>
                     <button className="nav-cta" onClick={() => navigate('/canvas')} id="nav-cta">
                         Launch App →
                     </button>

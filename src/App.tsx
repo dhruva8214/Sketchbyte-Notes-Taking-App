@@ -4,8 +4,19 @@ import Landing from './pages/Landing';
 import CanvasApp from './pages/CanvasApp';
 import AuthPage from './pages/AuthPage';
 import ProtectedRoute from './components/ProtectedRoute';
+import { useThemeStore } from './store/themeStore';
 
 const App: React.FC = () => {
+  const { theme } = useThemeStore();
+
+  React.useEffect(() => {
+    if (theme === 'light') {
+      document.documentElement.classList.add('theme-light');
+    } else {
+      document.documentElement.classList.remove('theme-light');
+    }
+  }, [theme]);
+
   return (
     <Routes>
       <Route path="/" element={<Landing />} />

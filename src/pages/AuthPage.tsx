@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithGoogle, signInWithEmail, signUpWithEmail } from '../firebase/authService';
+import { useThemeStore } from '../store/themeStore';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
 const AuthPage: React.FC = () => {
     const navigate = useNavigate();
+    const { theme, toggleTheme } = useThemeStore();
     const [tab, setTab] = useState<'login' | 'signup'>('login');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -45,10 +48,15 @@ const AuthPage: React.FC = () => {
             <div className="auth-orb auth-orb-2" />
 
             <div className="auth-card">
-                {/* Logo */}
-                <div className="auth-logo">
-                    <div className="auth-logo-icon">✦</div>
-                    <span className="auth-logo-text">Sketchbyte</span>
+                {/* Logo & Theme Toggle */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                    <div className="auth-logo" style={{ marginBottom: 0 }}>
+                        <div className="auth-logo-icon">✦</div>
+                        <span className="auth-logo-text">Sketchbyte</span>
+                    </div>
+                    <button className="theme-toggle" onClick={toggleTheme} title="Toggle Theme" style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', fontSize: '18px', padding: '4px' }}>
+                        {theme === 'dark' ? <FiSun /> : <FiMoon />}
+                    </button>
                 </div>
                 <p className="auth-tagline">Think Without Limits.</p>
 
