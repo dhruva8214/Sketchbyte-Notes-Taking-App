@@ -1,4 +1,5 @@
 import Konva from 'konva';
+import { jsPDF } from 'jspdf';
 
 export async function exportPNG(stage: Konva.Stage, boardName: string): Promise<void> {
     const dataURL = stage.toDataURL({ pixelRatio: 2, mimeType: 'image/png' });
@@ -25,4 +26,23 @@ export async function exportSVG(stage: Konva.Stage, boardName: string): Promise<
     a.download = `${boardName.replace(/\s+/g, '_')}.svg`;
     a.click();
     URL.revokeObjectURL(url);
+}
+
+export async function exportPDF(stage: Konva.Stage, boardName: string): Promise<void> {
+    const dataURL = stage.toDataURL({ pixelRatio: 2, mimeType: 'image/png' });
+
+    // Create PDF matching stage dimensions (in internal units, assuming 1 unit = 1 px)
+    // We'll use 'px' for exact matching. Alternatively, standard 'pt' or 'mm'.
+    const w = stage.width();
+    const h = stage.height();
+    const orientation = w > h ? 'landscape' : 'portrait';
+
+    const pdf = new jsPDF({
+        orientation,
+        unit: 'px',
+        format: [w, h]
+    });
+
+    pdf.addImage(dataURL, 'PNG', 0, 0, w, h);
+    pdf.save(`${boardName.replace(/\s+/g, '_')}.pdf`);
 }

@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { useBoardStore } from '../store/boardStore';
 import { useShapesStore } from '../store/shapesStore';
-import { exportPNG, exportSVG } from '../utils/exportImage';
+import { exportPNG, exportSVG, exportPDF } from '../utils/exportImage';
 import { exportJSON, importJSON } from '../utils/saveLoad';
 import Konva from 'konva';
 import {
-    FiDownload, FiUpload, FiImage, FiCode, FiMenu, FiLogOut, FiUser, FiSun, FiMoon
+    FiDownload, FiUpload, FiImage, FiCode, FiMenu, FiLogOut, FiUser, FiSun, FiMoon, FiFileText
 } from 'react-icons/fi';
 import { useAuthStore } from '../store/authStore';
 import { useThemeStore } from '../store/themeStore';
@@ -39,6 +39,12 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onOpenTemplates }) => 
     const handleExportSVG = async () => {
         const stageRef = (window as unknown as Record<string, { current: Konva.Stage }>).__agStageRef;
         if (stageRef?.current) await exportSVG(stageRef.current, boardName);
+        setExportOpen(false);
+    };
+
+    const handleExportPDF = async () => {
+        const stageRef = (window as unknown as Record<string, { current: Konva.Stage }>).__agStageRef;
+        if (stageRef?.current) await exportPDF(stageRef.current, boardName);
         setExportOpen(false);
     };
 
@@ -129,6 +135,9 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onOpenTemplates }) => 
                             </button>
                             <button onClick={handleExportSVG} id="btn-export-svg">
                                 <FiImage /> Export SVG
+                            </button>
+                            <button onClick={handleExportPDF} id="btn-export-pdf">
+                                <FiFileText /> Export PDF
                             </button>
                             <button onClick={handleExportJSON} id="btn-export-json">
                                 <FiCode /> Save as JSON
