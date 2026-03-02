@@ -10,7 +10,7 @@ const Landing: React.FC = () => {
             <nav className="landing-nav">
                 <div className="landing-logo">
                     <span className="logo-icon">✦</span>
-                    <span className="logo-text">Antigravity</span>
+                    <span className="logo-text">Sketchbyte</span>
                 </div>
                 <div className="landing-nav-links">
                     <a href="#features">Features</a>
@@ -122,7 +122,7 @@ const Landing: React.FC = () => {
                 <h2>Ready to think without limits?</h2>
                 <p>No sign-up. No credit card. Just open and start drawing.</p>
                 <button className="hero-cta" onClick={() => navigate('/canvas')} id="final-cta">
-                    Open Antigravity →
+                    Open Sketchbyte →
                 </button>
             </section>
 
@@ -130,7 +130,7 @@ const Landing: React.FC = () => {
             <footer className="landing-footer">
                 <div className="footer-brand">
                     <span className="logo-icon">✦</span>
-                    <span>Antigravity</span>
+                    <span>Sketchbyte</span>
                 </div>
                 <p>Built with ❤️ for students and coders. Free forever.</p>
                 <p className="footer-founder">

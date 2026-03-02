@@ -1,12 +1,16 @@
 import { create } from 'zustand';
 import type { Board, Shape } from '../types';
 import { v4 as uuidv4 } from 'uuid';
+import { useAuthStore } from './authStore';
 
-const BOARDS_KEY = 'ag_boards';
+const getBoardsKey = () => {
+    const user = useAuthStore.getState().user;
+    return user ? `ag_boards_${user.uid}` : 'ag_boards';
+};
 
 function loadBoards(): Board[] {
     try {
-        const raw = localStorage.getItem(BOARDS_KEY);
+        const raw = localStorage.getItem(getBoardsKey());
         if (!raw) return [];
         return JSON.parse(raw) as Board[];
     } catch {
@@ -15,8 +19,16 @@ function loadBoards(): Board[] {
 }
 
 function persistBoards(boards: Board[]) {
-    localStorage.setItem(BOARDS_KEY, JSON.stringify(boards));
+    localStorage.setItem(getBoardsKey(), JSON.stringify(boards));
 }
+
+const createDefaultBoard = (): Board => ({
+    id: uuidv4(),
+    name: 'My First Board',
+    shapes: [],
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+});
 
 interface BoardState {
     boards: Board[];
@@ -27,19 +39,11 @@ interface BoardState {
     setActiveBoard: (id: string) => void;
     updateBoardShapes: (id: string, shapes: Shape[]) => void;
     getActiveBoard: () => Board | undefined;
+    reloadBoards: () => void;
 }
 
 const initialBoards = loadBoards();
-const firstBoard: Board =
-    initialBoards.length > 0
-        ? initialBoards[0]
-        : {
-            id: uuidv4(),
-            name: 'My First Board',
-            shapes: [],
-            createdAt: Date.now(),
-            updatedAt: Date.now(),
-        };
+const firstBoard = initialBoards.length > 0 ? initialBoards[0] : createDefaultBoard();
 
 if (initialBoards.length === 0) {
     persistBoards([firstBoard]);
@@ -48,6 +52,13 @@ if (initialBoards.length === 0) {
 export const useBoardStore = create<BoardState>((set, get) => ({
     boards: initialBoards.length > 0 ? initialBoards : [firstBoard],
     activeBoardId: firstBoard.id,
+
+    reloadBoards: () => {
+        const loaded = loadBoards();
+        const boards = loaded.length > 0 ? loaded : [createDefaultBoard()];
+        if (loaded.length === 0) persistBoards(boards);
+        set({ boards, activeBoardId: boards[0].id });
+    },
 
     createBoard: (name = 'Untitled Board') => {
         const board: Board = {

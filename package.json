@@ -1,5 +1,5 @@
 {
-  "name": "antigravity-notes-taking",
+  "name": "sketchbyte",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,7 @@
     "@types/file-saver": "^2.0.7",
     "@types/uuid": "^9.0.8",
     "file-saver": "^2.0.5",
+    "firebase": "^12.10.0",
     "html-to-image": "^1.11.13",
     "konva": "^10.2.0",
     "react": "^19.2.0",

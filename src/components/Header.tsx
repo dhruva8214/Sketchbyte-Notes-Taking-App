@@ -5,8 +5,10 @@ import { exportPNG, exportSVG } from '../utils/exportImage';
 import { exportJSON, importJSON } from '../utils/saveLoad';
 import Konva from 'konva';
 import {
-    FiDownload, FiUpload, FiImage, FiCode, FiMenu
+    FiDownload, FiUpload, FiImage, FiCode, FiMenu, FiLogOut, FiUser
 } from 'react-icons/fi';
+import { useAuthStore } from '../store/authStore';
+import { signOut } from '../firebase/authService';
 
 interface HeaderProps {
     onToggleSidebar: () => void;
@@ -16,6 +18,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onOpenTemplates }) => {
     const { activeBoardId, boards, renameBoard } = useBoardStore();
     const { shapes, loadShapes } = useShapesStore();
+    const { user } = useAuthStore();
     const [isEditingName, setIsEditingName] = useState(false);
     const [exportOpen, setExportOpen] = useState(false);
     const importRef = useRef<HTMLInputElement>(null);
@@ -59,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onOpenTemplates }) => 
                 </button>
                 <div className="header-brand">
                     <span className="header-logo">✦</span>
-                    <span className="header-name">Antigravity</span>
+                    <span className="header-name">Sketchbyte</span>
                 </div>
 
                 <div className="header-divider" />
@@ -128,6 +131,20 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onOpenTemplates }) => 
                             </button>
                         </div>
                     )}
+                </div>
+
+                <div className="header-divider" />
+
+                <div className="header-user-profile">
+                    <div className="header-avatar">
+                        <FiUser />
+                    </div>
+                    <span className="header-user-name" title={user?.email || ''}>
+                        {user?.displayName || user?.email?.split('@')[0] || 'User'}
+                    </span>
+                    <button className="header-btn logout-btn" onClick={() => signOut()} title="Sign Out">
+                        <FiLogOut />
+                    </button>
                 </div>
             </div>
         </header>
