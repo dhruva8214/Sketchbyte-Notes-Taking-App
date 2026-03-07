@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function useReveal() {
@@ -20,7 +20,7 @@ const platforms = [
     {
         id: 'android',
         name: 'Android',
-        emoji: '🤖',
+        emoji: 'ðŸ¤–',
         color: '#86efac',
         gradFrom: 'rgba(134,239,172,.15)',
         gradTo: 'rgba(134,239,172,.03)',
@@ -32,16 +32,16 @@ const platforms = [
         subtitle: 'Install via Chrome or download APK',
         steps: [
             { icon: '1', title: 'Open in Chrome', desc: 'Visit sketchbyte.vercel.app in Google Chrome on your Android device.' },
-            { icon: '2', title: 'Tap Menu (⋮)', desc: 'Tap the three-dot menu in the top-right corner of Chrome.' },
+            { icon: '2', title: 'Tap Menu (â‹®)', desc: 'Tap the three-dot menu in the top-right corner of Chrome.' },
             { icon: '3', title: 'Add to Home Screen', desc: 'Tap "Add to Home screen" and confirm. Sketchbyte will appear as a real app icon.' },
-            { icon: '4', title: 'Launch & Enjoy!', desc: 'Open the app from your home screen — it runs in fullscreen with no browser UI.' },
+            { icon: '4', title: 'Launch & Enjoy!', desc: 'Open the app from your home screen â€” it runs in fullscreen with no browser UI.' },
         ],
         apk: true,
     },
     {
         id: 'ios',
         name: 'iPhone / iPad',
-        emoji: '🍎',
+        emoji: 'ðŸŽ',
         color: '#67e8f9',
         gradFrom: 'rgba(103,232,249,.15)',
         gradTo: 'rgba(103,232,249,.03)',
@@ -53,16 +53,16 @@ const platforms = [
         subtitle: 'Install via Safari in seconds',
         steps: [
             { icon: '1', title: 'Open in Safari', desc: 'Visit sketchbyte.vercel.app using Safari (not Chrome) on your iPhone or iPad.' },
-            { icon: '2', title: 'Tap Share (⬆)', desc: 'Tap the Share icon at the bottom of Safari. It looks like a box with an arrow.' },
+            { icon: '2', title: 'Tap Share (â¬†)', desc: 'Tap the Share icon at the bottom of Safari. It looks like a box with an arrow.' },
             { icon: '3', title: 'Add to Home Screen', desc: 'Scroll down and tap "Add to Home Screen". Name it "Sketchbyte" and tap Add.' },
-            { icon: '4', title: 'Launch & Enjoy!', desc: 'The app appears on your home screen and opens in fullscreen — just like a real app!' },
+            { icon: '4', title: 'Launch & Enjoy!', desc: 'The app appears on your home screen and opens in fullscreen â€” just like a real app!' },
         ],
         apk: false,
     },
     {
         id: 'windows',
         name: 'Windows',
-        emoji: '🪟',
+        emoji: 'ðŸªŸ',
         color: '#a78bfa',
         gradFrom: 'rgba(167,139,250,.15)',
         gradTo: 'rgba(167,139,250,.03)',
@@ -74,16 +74,16 @@ const platforms = [
         subtitle: 'Install via Chrome or Edge',
         steps: [
             { icon: '1', title: 'Open in Chrome / Edge', desc: 'Visit sketchbyte.vercel.app in Google Chrome or Microsoft Edge on Windows.' },
-            { icon: '2', title: 'Click Install Icon', desc: 'Look for a ⊕ or computer icon in the address bar on the right side. Click it.' },
+            { icon: '2', title: 'Click Install Icon', desc: 'Look for a âŠ• or computer icon in the address bar on the right side. Click it.' },
             { icon: '3', title: 'Click Install', desc: 'A prompt will appear. Click "Install" to add Sketchbyte to your desktop and Start Menu.' },
-            { icon: '4', title: 'Launch & Enjoy!', desc: 'Sketchbyte opens in its own window — no browser, no tabs. Just the app.' },
+            { icon: '4', title: 'Launch & Enjoy!', desc: 'Sketchbyte opens in its own window â€” no browser, no tabs. Just the app.' },
         ],
         apk: false,
     },
     {
         id: 'mac',
         name: 'macOS',
-        emoji: '🍏',
+        emoji: 'ðŸ',
         color: '#fbbf24',
         gradFrom: 'rgba(251,191,36,.15)',
         gradTo: 'rgba(251,191,36,.03)',
@@ -95,7 +95,7 @@ const platforms = [
         subtitle: 'Install via Chrome or Safari',
         steps: [
             { icon: '1', title: 'Open in Chrome', desc: 'Visit sketchbyte.vercel.app in Google Chrome on your Mac.' },
-            { icon: '2', title: 'Click Install Icon', desc: 'Click the ⊕ icon in the right side of the address bar (or go to menu → Install Sketchbyte).' },
+            { icon: '2', title: 'Click Install Icon', desc: 'Click the âŠ• icon in the right side of the address bar (or go to menu â†’ Install Sketchbyte).' },
             { icon: '3', title: 'Click Install', desc: 'Confirm the install. The app will be added to your Applications folder and Dock.' },
             { icon: '4', title: 'Launch & Enjoy!', desc: 'Open Sketchbyte from your Dock or Applications. Runs like a native Mac app.' },
         ],
@@ -106,7 +106,7 @@ const platforms = [
 const faqs = [
     { q: 'Is Sketchbyte completely free?', a: 'Yes! 100% free forever. No subscriptions, no sign-up required for the whiteboard. Just open and start drawing.' },
     { q: 'Does it work offline after installing?', a: 'Yes. After installing as a PWA, core features like the whiteboard and study planner work offline. Your data is saved locally in the browser.' },
-    { q: 'What is a PWA?', a: 'A Progressive Web App is a website that can be installed like a native app on any device. It runs in its own window, works offline, and feels exactly like a real app — but requires no App Store.' },
+    { q: 'What is a PWA?', a: 'A Progressive Web App is a website that can be installed like a native app on any device. It runs in its own window, works offline, and feels exactly like a real app â€” but requires no App Store.' },
     { q: 'Can I get a real APK for Android?', a: 'Yes! Use PWABuilder (free, made by Microsoft) to generate a real APK from our live URL. See the Android APK section above.' },
     { q: 'Does it sync across devices?', a: 'Your account (Firebase login) syncs access. Canvas data is stored locally per device right now. Cloud sync is on our roadmap!' },
 ];
@@ -155,7 +155,7 @@ const DownloadPage: React.FC = () => {
                     style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: 800, fontSize: '18px', cursor: 'pointer' }}
                     onClick={() => navigate('/')}
                 >
-                    <span style={{ background: 'linear-gradient(135deg,#a78bfa,#67e8f9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontSize: '22px' }}>✦</span>
+                    <span style={{ background: 'linear-gradient(135deg,#a78bfa,#67e8f9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontSize: '22px' }}>âœ¦</span>
                     Sketchbyte
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -163,7 +163,7 @@ const DownloadPage: React.FC = () => {
                     <button onClick={() => navigate('/canvas')} className="dl-nav-link">Whiteboard</button>
                     <button onClick={() => navigate('/study-planner')} className="dl-nav-link">Study Planner</button>
                     <button onClick={() => navigate('/canvas')} className="dl-btn-primary" style={{ padding: '8px 18px', fontSize: '14px' }}>
-                        Launch App →
+                        Launch App â†’
                     </button>
                 </div>
             </nav>
@@ -175,13 +175,13 @@ const DownloadPage: React.FC = () => {
 
                 <div ref={heroRef} className="reveal">
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '999px', border: '1px solid rgba(134,239,172,.3)', background: 'rgba(134,239,172,.08)', color: '#86efac', fontSize: '13px', fontWeight: 600, marginBottom: '24px' }}>
-                        📱 Available on all your devices
+                        ðŸ“± Available on all your devices
                     </div>
 
                     {/* App Icon */}
                     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '28px' }}>
                         <div style={{ width: '100px', height: '100px', borderRadius: '26px', background: 'linear-gradient(135deg,#a78bfa20,#67e8f920)', border: '2px solid rgba(167,139,250,.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '52px', animation: 'float 4s ease-in-out infinite', boxShadow: '0 20px 60px rgba(124,58,237,.3)' }}>
-                            ✦
+                            âœ¦
                         </div>
                     </div>
 
@@ -199,10 +199,10 @@ const DownloadPage: React.FC = () => {
 
                     <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <button className="dl-btn-primary" onClick={() => navigate('/canvas')}>
-                            🚀 Launch Web App
+                            ðŸš€ Launch Web App
                         </button>
                         <button className="dl-btn-ghost" onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}>
-                            📥 See Install Guide ↓
+                            ðŸ“¥ See Install Guide â†“
                         </button>
                     </div>
 
@@ -228,7 +228,7 @@ const DownloadPage: React.FC = () => {
                 <div ref={platformsRef} className="reveal">
                     <div style={{ textAlign: 'center', marginBottom: '40px' }}>
                         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '5px 14px', borderRadius: '999px', border: '1px solid rgba(167,139,250,.3)', background: 'rgba(167,139,250,.08)', color: '#a78bfa', fontSize: '12px', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', marginBottom: '16px' }}>
-                            📲 Install Guide
+                            ðŸ“² Install Guide
                         </div>
                         <h2 style={{ fontSize: 'clamp(24px,4vw,38px)', fontWeight: 900, margin: '0 0 12px' }}>Choose Your Platform</h2>
                         <p style={{ color: 'rgba(148,163,184,.8)', fontSize: '15px', maxWidth: '440px', margin: '0 auto' }}>Step-by-step install guide for every device.</p>
@@ -262,13 +262,13 @@ const DownloadPage: React.FC = () => {
                             <div>
                                 <h3 style={{ fontSize: '22px', fontWeight: 800, margin: '0 0 4px', color: '#e2e8f0' }}>{selectedPlatform.name}</h3>
                                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', padding: '3px 10px', borderRadius: '999px', background: selectedPlatform.badgeBg, color: selectedPlatform.badgeColor, border: `1px solid ${selectedPlatform.badgeBorder}`, fontSize: '11px', fontWeight: 700 }}>
-                                    ✓ {selectedPlatform.badge}
+                                    âœ“ {selectedPlatform.badge}
                                 </span>
                             </div>
                         </div>
 
                         <p style={{ color: 'rgba(148,163,184,.85)', fontSize: '15px', marginBottom: '24px', lineHeight: 1.6 }}>
-                            {selectedPlatform.subtitle} — takes less than 60 seconds, no App Store required.
+                            {selectedPlatform.subtitle} â€” takes less than 60 seconds, no App Store required.
                         </p>
 
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '14px' }}>
@@ -287,7 +287,7 @@ const DownloadPage: React.FC = () => {
 
                         <div style={{ marginTop: '24px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                             <button className="dl-btn-primary" onClick={() => navigate('/canvas')}>
-                                🚀 Open Web App First
+                                ðŸš€ Open Web App First
                             </button>
                             {selectedPlatform.id === 'android' && (
                                 <a
@@ -297,7 +297,7 @@ const DownloadPage: React.FC = () => {
                                     className="dl-btn-ghost"
                                     style={{ textDecoration: 'none', color: '#86efac', borderColor: 'rgba(134,239,172,.3)' }}
                                 >
-                                    📦 Generate APK (PWABuilder)
+                                    ðŸ“¦ Generate APK (PWABuilder)
                                 </a>
                             )}
                         </div>
@@ -312,7 +312,7 @@ const DownloadPage: React.FC = () => {
                         <div style={{ position: 'absolute', width: 300, height: 300, top: '-20%', right: '-5%', borderRadius: '50%', background: 'radial-gradient(circle,rgba(134,239,172,.1) 0%,transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
 
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                            <span style={{ fontSize: '32px' }}>🤖</span>
+                            <span style={{ fontSize: '32px' }}>ðŸ¤–</span>
                             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', padding: '4px 12px', borderRadius: '999px', background: 'rgba(134,239,172,.12)', color: '#86efac', border: '1px solid rgba(134,239,172,.3)', fontSize: '12px', fontWeight: 800 }}>
                                 ANDROID APK
                             </span>
@@ -321,15 +321,15 @@ const DownloadPage: React.FC = () => {
                             Want a real APK file for Android?
                         </h2>
                         <p style={{ color: 'rgba(148,163,184,.85)', fontSize: '15px', maxWidth: '560px', lineHeight: 1.7, marginBottom: '32px', position: 'relative' }}>
-                            Use <strong style={{ color: '#86efac' }}>PWABuilder</strong> — a free tool by Microsoft — to generate a real Android APK from Sketchbyte's live URL. Install it directly on any Android device without Google Play.
+                            Use <strong style={{ color: '#86efac' }}>PWABuilder</strong> â€” a free tool by Microsoft â€” to generate a real Android APK from Sketchbyte's live URL. Install it directly on any Android device without Google Play.
                         </p>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '32px', position: 'relative' }}>
                             {[
-                                { n: '1', t: 'Go to PWABuilder', d: 'Visit pwabuilder.com — it\'s free, made by Microsoft.' },
+                                { n: '1', t: 'Go to PWABuilder', d: 'Visit pwabuilder.com â€” it\'s free, made by Microsoft.' },
                                 { n: '2', t: 'Enter our URL', d: 'Paste: https://sketchbyte.vercel.app and click Start.' },
                                 { n: '3', t: 'Select Android', d: 'Choose "Android" from the package options.' },
-                                { n: '4', t: 'Download APK', d: 'Click Generate → Download. You get a real .apk file.' },
+                                { n: '4', t: 'Download APK', d: 'Click Generate â†’ Download. You get a real .apk file.' },
                                 { n: '5', t: 'Install on Android', d: 'Enable "Install from unknown sources" in Settings and tap the APK to install.' },
                             ].map(step => (
                                 <div key={step.n} className="apk-step">
@@ -351,7 +351,7 @@ const DownloadPage: React.FC = () => {
                             className="dl-btn-primary"
                             style={{ textDecoration: 'none', background: 'linear-gradient(135deg,#16a34a,#15803d)' }}
                         >
-                            📦 Generate APK with PWABuilder →
+                            ðŸ“¦ Generate APK with PWABuilder â†’
                         </a>
                     </div>
                 </div>
@@ -362,22 +362,22 @@ const DownloadPage: React.FC = () => {
                 <div style={{ borderRadius: '20px', border: '1px solid rgba(167,139,250,.15)', background: 'rgba(167,139,250,.04)', padding: '36px 40px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center' }}>
                     <div>
                         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '4px 12px', borderRadius: '999px', border: '1px solid rgba(167,139,250,.3)', background: 'rgba(167,139,250,.08)', color: '#a78bfa', fontSize: '11px', fontWeight: 800, marginBottom: '14px' }}>
-                            ℹ️ WHY PWA?
+                            â„¹ï¸ WHY PWA?
                         </div>
                         <h3 style={{ fontSize: '24px', fontWeight: 800, margin: '0 0 14px', color: '#e2e8f0' }}>Why not App Store?</h3>
                         <p style={{ color: 'rgba(148,163,184,.85)', fontSize: '15px', lineHeight: 1.7, margin: '0 0 20px' }}>
-                            PWA (Progressive Web App) lets you install Sketchbyte directly from your browser — no App Store fees, no waiting, no 4GB download. You get the <strong style={{ color: '#a78bfa' }}>exact same features</strong> as a native app.
+                            PWA (Progressive Web App) lets you install Sketchbyte directly from your browser â€” no App Store fees, no waiting, no 4GB download. You get the <strong style={{ color: '#a78bfa' }}>exact same features</strong> as a native app.
                         </p>
                         <button className="dl-btn-ghost" onClick={() => navigate('/canvas')}>
-                            Try it in Browser First →
+                            Try it in Browser First â†’
                         </button>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                         {[
-                            { icon: '⚡', title: 'Instant Install', desc: '60 seconds. No waiting for app store approval.' },
-                            { icon: '🔌', title: 'Works Offline', desc: 'After first load, the app works without internet.' },
-                            { icon: '🔄', title: 'Always Up-to-Date', desc: 'Updates automatically — no manual app updates.' },
-                            { icon: '💾', title: 'No Storage Bloat', desc: 'Tiny footprint compared to native apps.' },
+                            { icon: 'âš¡', title: 'Instant Install', desc: '60 seconds. No waiting for app store approval.' },
+                            { icon: 'ðŸ”Œ', title: 'Works Offline', desc: 'After first load, the app works without internet.' },
+                            { icon: 'ðŸ”„', title: 'Always Up-to-Date', desc: 'Updates automatically â€” no manual app updates.' },
+                            { icon: 'ðŸ’¾', title: 'No Storage Bloat', desc: 'Tiny footprint compared to native apps.' },
                         ].map(item => (
                             <div key={item.title} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '12px 16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,.06)', background: 'rgba(255,255,255,.02)' }}>
                                 <span style={{ fontSize: '20px', flexShrink: 0 }}>{item.icon}</span>
@@ -391,11 +391,11 @@ const DownloadPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* ── STORE PUBLISHING SECTION ── */}
+            {/* â”€â”€ STORE PUBLISHING SECTION â”€â”€ */}
             <section id="stores" style={{ padding: '0 24px 80px', maxWidth: '1100px', margin: '0 auto' }}>
                 <div style={{ textAlign: 'center', marginBottom: '40px' }}>
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '5px 14px', borderRadius: '999px', border: '1px solid rgba(251,191,36,.3)', background: 'rgba(251,191,36,.08)', color: '#fbbf24', fontSize: '12px', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', marginBottom: '16px' }}>
-                        🏪 App Stores
+                        ðŸª App Stores
                     </div>
                     <h2 style={{ fontSize: 'clamp(24px,4vw,38px)', fontWeight: 900, margin: '0 0 12px' }}>Available on These Stores</h2>
                     <p style={{ color: 'rgba(148,163,184,.8)', fontSize: '15px', maxWidth: '480px', margin: '0 auto', lineHeight: 1.65 }}>
@@ -408,7 +408,7 @@ const DownloadPage: React.FC = () => {
                     {/* GitHub Releases */}
                     <div style={{ borderRadius: '20px', border: '1px solid rgba(226,232,240,.12)', background: 'linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.01))', padding: '28px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(226,232,240,.08)', border: '1px solid rgba(226,232,240,.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px' }}>🐙</div>
+                            <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(226,232,240,.08)', border: '1px solid rgba(226,232,240,.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px' }}>ðŸ™</div>
                             <div>
                                 <div style={{ fontSize: '18px', fontWeight: 800, color: '#e2e8f0' }}>GitHub Releases</div>
                                 <span style={{ display: 'inline-flex', padding: '2px 8px', borderRadius: '999px', background: 'rgba(226,232,240,.08)', color: 'rgba(226,232,240,.6)', border: '1px solid rgba(226,232,240,.12)', fontSize: '11px', fontWeight: 700 }}>AUTO-BUILT</span>
@@ -425,29 +425,29 @@ const DownloadPage: React.FC = () => {
                                 </div>
                             ))}
                         </div>
-                        <a href="https://github.com/dhruva8214/-Antigravity-Notes-Taking-App/releases" target="_blank" rel="noopener noreferrer"
+                        <a href="https://github.com/dhruva8214/Sketchbyte-Notes-Taking-App/releases" target="_blank" rel="noopener noreferrer"
                             style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '11px 18px', borderRadius: '10px', border: '1px solid rgba(226,232,240,.18)', background: 'rgba(226,232,240,.05)', color: '#e2e8f0', textDecoration: 'none', fontSize: '13px', fontWeight: 700, transition: 'all .2s', marginTop: 'auto' }}
                             onMouseEnter={e => e.currentTarget.style.background = 'rgba(226,232,240,.1)'}
                             onMouseLeave={e => e.currentTarget.style.background = 'rgba(226,232,240,.05)'}
                         >
-                            🔗 View GitHub Releases →
+                            ðŸ”— View GitHub Releases â†’
                         </a>
                     </div>
 
                     {/* Aptoide */}
                     <div style={{ borderRadius: '20px', border: '1px solid rgba(251,146,60,.18)', background: 'linear-gradient(145deg,rgba(251,146,60,.07),rgba(251,146,60,.01))', padding: '28px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(251,146,60,.1)', border: '1px solid rgba(251,146,60,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px' }}>🟠</div>
+                            <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(251,146,60,.1)', border: '1px solid rgba(251,146,60,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px' }}>ðŸŸ </div>
                             <div>
                                 <div style={{ fontSize: '18px', fontWeight: 800, color: '#e2e8f0' }}>Aptoide</div>
                                 <span style={{ display: 'inline-flex', padding: '2px 8px', borderRadius: '999px', background: 'rgba(251,146,60,.1)', color: '#fb923c', border: '1px solid rgba(251,146,60,.25)', fontSize: '11px', fontWeight: 700 }}>FREE TO PUBLISH</span>
                             </div>
                         </div>
                         <p style={{ fontSize: '13px', color: 'rgba(148,163,184,.8)', lineHeight: 1.65, margin: 0 }}>
-                            Aptoide is the largest alternative Android app store with 300M+ users. Submit your APK through their developer portal — no fees, no approval delay.
+                            Aptoide is the largest alternative Android app store with 300M+ users. Submit your APK through their developer portal â€” no fees, no approval delay.
                         </p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                            {['Create account at aptoide.com/dev', 'Upload your signed .apk file', 'Fill in app name, description, icon', 'Publish — live within minutes'].map((s, i) => (
+                            {['Create account at aptoide.com/dev', 'Upload your signed .apk file', 'Fill in app name, description, icon', 'Publish â€” live within minutes'].map((s, i) => (
                                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: 'rgba(148,163,184,.8)' }}>
                                     <span style={{ width: '20px', height: '20px', borderRadius: '50%', background: 'rgba(251,146,60,.1)', border: '1px solid rgba(251,146,60,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: 800, flexShrink: 0, color: '#fb923c' }}>{i + 1}</span>
                                     {s}
@@ -459,14 +459,14 @@ const DownloadPage: React.FC = () => {
                             onMouseEnter={e => e.currentTarget.style.background = 'rgba(251,146,60,.14)'}
                             onMouseLeave={e => e.currentTarget.style.background = 'rgba(251,146,60,.06)'}
                         >
-                            🔗 Go to Aptoide Developer Portal →
+                            ðŸ”— Go to Aptoide Developer Portal â†’
                         </a>
                     </div>
 
                     {/* APKPure */}
                     <div style={{ borderRadius: '20px', border: '1px solid rgba(103,232,249,.18)', background: 'linear-gradient(145deg,rgba(103,232,249,.07),rgba(103,232,249,.01))', padding: '28px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(103,232,249,.1)', border: '1px solid rgba(103,232,249,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px' }}>🔵</div>
+                            <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(103,232,249,.1)', border: '1px solid rgba(103,232,249,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px' }}>ðŸ”µ</div>
                             <div>
                                 <div style={{ fontSize: '18px', fontWeight: 800, color: '#e2e8f0' }}>APKPure</div>
                                 <span style={{ display: 'inline-flex', padding: '2px 8px', borderRadius: '999px', background: 'rgba(103,232,249,.1)', color: '#67e8f9', border: '1px solid rgba(103,232,249,.25)', fontSize: '11px', fontWeight: 700 }}>500M+ USERS</span>
@@ -476,7 +476,7 @@ const DownloadPage: React.FC = () => {
                             APKPure is one of the most visited Android app sites worldwide. Upload your APK through their developer program to reach millions of Android users.
                         </p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                            {['Register at developer.apkpure.com', 'Submit your signed .apk file', 'Add screenshots + description', 'Review takes 1–3 business days'].map((s, i) => (
+                            {['Register at developer.apkpure.com', 'Submit your signed .apk file', 'Add screenshots + description', 'Review takes 1â€“3 business days'].map((s, i) => (
                                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: 'rgba(148,163,184,.8)' }}>
                                     <span style={{ width: '20px', height: '20px', borderRadius: '50%', background: 'rgba(103,232,249,.1)', border: '1px solid rgba(103,232,249,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: 800, flexShrink: 0, color: '#67e8f9' }}>{i + 1}</span>
                                     {s}
@@ -488,14 +488,14 @@ const DownloadPage: React.FC = () => {
                             onMouseEnter={e => e.currentTarget.style.background = 'rgba(103,232,249,.14)'}
                             onMouseLeave={e => e.currentTarget.style.background = 'rgba(103,232,249,.06)'}
                         >
-                            🔗 Go to APKPure Developer Portal →
+                            ðŸ”— Go to APKPure Developer Portal â†’
                         </a>
                     </div>
                 </div>
 
                 {/* Instructions banner */}
                 <div style={{ marginTop: '24px', padding: '20px 24px', borderRadius: '14px', border: '1px solid rgba(251,191,36,.18)', background: 'rgba(251,191,36,.05)', display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-                    <span style={{ fontSize: '22px', flexShrink: 0 }}>💡</span>
+                    <span style={{ fontSize: '22px', flexShrink: 0 }}>ðŸ’¡</span>
                     <div>
                         <div style={{ fontWeight: 700, fontSize: '14px', color: '#fbbf24', marginBottom: '4px' }}>How to get your APK</div>
                         <div style={{ fontSize: '13px', color: 'rgba(148,163,184,.8)', lineHeight: 1.65 }}>
@@ -542,17 +542,17 @@ const DownloadPage: React.FC = () => {
                         Ready to Start Learning?
                     </h2>
                     <p style={{ fontSize: '16px', color: 'rgba(148,163,184,.85)', margin: '0 auto 32px', maxWidth: '440px', position: 'relative' }}>
-                        Install takes 60 seconds. Or just use it in your browser right now — no install needed.
+                        Install takes 60 seconds. Or just use it in your browser right now â€” no install needed.
                     </p>
                     <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', position: 'relative' }}>
                         <button className="dl-btn-primary" onClick={() => navigate('/canvas')}>
-                            🎨 Open Whiteboard →
+                            ðŸŽ¨ Open Whiteboard â†’
                         </button>
                         <button className="dl-btn-ghost" onClick={() => navigate('/study-planner')}>
-                            📚 Study Planner
+                            ðŸ“š Study Planner
                         </button>
                         <button className="dl-btn-ghost" onClick={() => navigate('/')} style={{ color: '#67e8f9', borderColor: 'rgba(103,232,249,.3)' }}>
-                            ← Back to Home
+                            â† Back to Home
                         </button>
                     </div>
                 </div>
@@ -561,13 +561,14 @@ const DownloadPage: React.FC = () => {
             {/* FOOTER */}
             <footer style={{ textAlign: 'center', padding: '36px 24px', borderTop: '1px solid rgba(255,255,255,.06)', color: 'rgba(148,163,184,.5)', fontSize: '13px' }}>
                 <div style={{ fontSize: '18px', fontWeight: 800, marginBottom: '8px' }}>
-                    ✦ <span style={{ background: 'linear-gradient(135deg,#a78bfa,#67e8f9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sketchbyte</span>
+                    âœ¦ <span style={{ background: 'linear-gradient(135deg,#a78bfa,#67e8f9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sketchbyte</span>
                 </div>
-                <p style={{ margin: '0 0 4px' }}>Built with ❤️ for students and coders · Free forever</p>
-                <p style={{ margin: 0 }}>Founded by <strong style={{ color: 'rgba(167,139,250,.8)' }}>Dhruva M</strong> · Think Without Limits.</p>
+                <p style={{ margin: '0 0 4px' }}>Built with â¤ï¸ for students and coders Â· Free forever</p>
+                <p style={{ margin: 0 }}>Founded by <strong style={{ color: 'rgba(167,139,250,.8)' }}>Dhruva M</strong> Â· Think Without Limits.</p>
             </footer>
         </div>
     );
 };
 
 export default DownloadPage;
+
