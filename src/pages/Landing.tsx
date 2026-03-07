@@ -23,7 +23,7 @@ function useReveal() {
 }
 
 const ALL_FEATURES = [
-    { icon: <FiPenTool size={22} />, color: '#f59e0b', title: '9 Drawing Tools', desc: 'Rectangle, circle, arrow, pencil, text, eraser, select & pan — all with keyboard shortcuts.' },
+    { icon: <FiPenTool size={22} />, color: '#f59e0b', title: '9 Drawing Tools', desc: 'Rectangle, circle, arrow, pencil, text, eraser, select and pan -- all with keyboard shortcuts.' },
     { icon: <FiSave size={22} />, color: '#34d399', title: 'Auto-Save', desc: 'Everything saved instantly in your browser. No account needed, no data lost.' },
     { icon: <FiDownload size={22} />, color: '#60a5fa', title: 'Export Anywhere', desc: 'Export as PNG, SVG, PDF, or reusable .antigravity JSON files.' },
     { icon: <FiGrid size={22} />, color: '#f472b6', title: 'Multiple Boards', desc: 'Create unlimited canvas boards, name them, switch between them in one click.' },
@@ -72,24 +72,24 @@ const Landing: React.FC = () => {
                 .sk-preview-card{border-radius:14px;padding:14px;border:1px solid;animation:borderGlow 3s ease-in-out infinite;}
             `}</style>
 
-            {/* ── NAV ── */}
+            {/* NAV */}
             <nav className="sk-nav">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: 800, fontSize: '18px', cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                    <span style={{ background: 'linear-gradient(135deg,#a78bfa,#67e8f9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontSize: '22px' }}>✦</span>
+                    <span style={{ background: 'linear-gradient(135deg,#a78bfa,#67e8f9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontSize: '22px' }}>*</span>
                     Sketchbyte
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <a href="#new" className="sk-link">What's New</a>
                     <a href="#all" className="sk-link">All Features</a>
-                    <button onClick={() => navigate('/download')} className="sk-link" style={{ color: '#86efac' }}>📲 Get the App</button>
+                    <button onClick={() => navigate('/download')} className="sk-link" style={{ color: '#86efac' }}>[App] Download App</button>
                     <button onClick={toggleTheme} className="sk-link" style={{ border: 'none', fontSize: '17px', display: 'flex', cursor: 'pointer' }}>
                         {theme === 'dark' ? <FiSun /> : <FiMoon />}
                     </button>
-                    <button onClick={() => navigate('/canvas')} className="sk-cta-btn">Launch App →</button>
+                    <button onClick={() => navigate('/canvas')} className="sk-cta-btn">Launch App -&gt;</button>
                 </div>
             </nav>
 
-            {/* ── HERO ── */}
+            {/* HERO */}
             <section style={{ position: 'relative', textAlign: 'center', padding: '100px 24px 80px', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', width: 520, height: 520, top: '-15%', left: '-10%', borderRadius: '50%', background: 'radial-gradient(circle,rgba(124,58,237,.18) 0%,transparent 70%)', filter: 'blur(72px)', animation: 'orbPulse 6s ease-in-out infinite', pointerEvents: 'none' }} />
                 <div style={{ position: 'absolute', width: 400, height: 400, top: '5%', right: '-8%', borderRadius: '50%', background: 'radial-gradient(circle,rgba(103,232,249,.12) 0%,transparent 70%)', filter: 'blur(72px)', animation: 'orbPulse 8s ease-in-out infinite 2s', pointerEvents: 'none' }} />
@@ -97,17 +97,17 @@ const Landing: React.FC = () => {
 
                 <div ref={heroRef} className="reveal">
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 16px', borderRadius: '999px', border: '1px solid rgba(167,139,250,.3)', background: 'rgba(167,139,250,.08)', color: '#a78bfa', fontSize: '13px', fontWeight: 600, marginBottom: '24px' }}>
-                        <FiZap size={12} /> Free · Unlimited · Open Source
+                        <FiZap size={12} /> Free - Unlimited - Open Source
                     </div>
                     <h1 style={{ fontSize: 'clamp(38px,7vw,76px)', fontWeight: 900, lineHeight: 1.05, margin: '0 auto 20px', maxWidth: '820px' }}>
                         The Visual Workspace<br />
                         <span style={{ background: 'linear-gradient(135deg,#a78bfa 0%,#67e8f9 40%,#fbbf24 100%)', backgroundSize: '200% 200%', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', animation: 'gradText 4s ease infinite' }}>for Every Student.</span>
                     </h1>
                     <p style={{ fontSize: '18px', color: 'rgba(148,163,184,.9)', maxWidth: '540px', margin: '0 auto 36px', lineHeight: 1.65 }}>
-                        Whiteboard · Code Diagrams · AI Study Planner — everything a student needs, 100% free forever.
+                        Whiteboard - Code Diagrams - AI Study Planner -- everything a student needs, 100% free forever.
                     </p>
                     <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <button className="sk-btn-primary" onClick={() => navigate('/canvas')}>Start Drawing — It's Free</button>
+                        <button className="sk-btn-primary" onClick={() => navigate('/canvas')}>Start Drawing -- It's Free</button>
                         <button className="sk-btn-ghost" onClick={() => navigate('/study-planner')}>
                             <FiBookOpen size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} />Study Planner
                         </button>
@@ -116,9 +116,9 @@ const Landing: React.FC = () => {
                     {/* Animated diagram preview */}
                     <div style={{ maxWidth: '780px', margin: '52px auto 0', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '14px' }}>
                         {[
-                            { t: '«class»', n: 'User', f: ['id: number', 'name: string', 'email: string'], c: '#a78bfa' },
-                            { t: '«interface»', n: 'Product', f: ['id: string', 'price: number', 'stock: int'], c: '#67e8f9' },
-                            { t: '«struct»', n: 'Order', f: ['orderId: string', 'total: number', 'status: string'], c: '#86efac' },
+                            { t: '<<class>>', n: 'User', f: ['id: number', 'name: string', 'email: string'], c: '#a78bfa' },
+                            { t: '<<interface>>', n: 'Product', f: ['id: string', 'price: number', 'stock: int'], c: '#67e8f9' },
+                            { t: '<<struct>>', n: 'Order', f: ['orderId: string', 'total: number', 'status: string'], c: '#86efac' },
                         ].map(card => (
                             <div key={card.n} className="sk-preview-card" style={{ background: `${card.c}08`, borderColor: `${card.c}28` }}>
                                 <div style={{ fontSize: '10px', fontWeight: 700, color: card.c, opacity: .7, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: '4px' }}>{card.t}</div>
@@ -130,7 +130,7 @@ const Landing: React.FC = () => {
                 </div>
             </section>
 
-            {/* ── WHAT'S NEW ── */}
+            {/* WHAT'S NEW */}
             <section id="new" style={{ padding: '72px 24px' }}>
                 <div ref={newRef} className="reveal" style={{ maxWidth: '1100px', margin: '0 auto' }}>
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '5px 14px', borderRadius: '999px', border: '1px solid rgba(167,139,250,.3)', background: 'rgba(167,139,250,.08)', color: '#a78bfa', fontSize: '12px', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', marginBottom: '18px' }}>
@@ -143,12 +143,12 @@ const Landing: React.FC = () => {
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
 
-                        {/* Code → Diagram card */}
+                        {/* Code to Diagram card */}
                         <div className="sk-new-card" style={{ boxShadow: '0 24px 60px rgba(167,139,250,.12)', borderColor: 'rgba(167,139,250,.2)' }}>
                             <div style={{ padding: '28px 28px 18px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', padding: '4px 12px', borderRadius: '999px', background: 'rgba(167,139,250,.12)', color: '#a78bfa', border: '1px solid rgba(167,139,250,.3)', fontSize: '11px', fontWeight: 800, letterSpacing: '.06em', width: 'fit-content' }}>✨ NEW FEATURE</span>
+                                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', padding: '4px 12px', borderRadius: '999px', background: 'rgba(167,139,250,.12)', color: '#a78bfa', border: '1px solid rgba(167,139,250,.3)', fontSize: '11px', fontWeight: 800, letterSpacing: '.06em', width: 'fit-content' }}>[NEW] FEATURE</span>
                                 <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(167,139,250,.12)', color: '#a78bfa', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><FiCpu size={26} /></div>
-                                <h3 style={{ fontSize: '22px', fontWeight: 800, margin: 0, color: '#e2e8f0' }}>Code → Diagram</h3>
+                                <h3 style={{ fontSize: '22px', fontWeight: 800, margin: 0, color: '#e2e8f0' }}>Code -&gt; Diagram</h3>
                                 <p style={{ color: 'rgba(148,163,184,.85)', fontSize: '15px', lineHeight: 1.65, margin: 0 }}>Paste any code and instantly get a visual class diagram on your canvas. Supports 12+ languages including TypeScript, Python, Java, Go, Rust and more.</p>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '7px' }}>
                                     {['12+ Languages', 'Auto-parse', 'Save as File', 'Add to Board', 'Class Diagrams'].map(p => (
@@ -177,16 +177,16 @@ const Landing: React.FC = () => {
                                 style={{ background: 'rgba(167,139,250,.1)', color: '#a78bfa', border: '1px solid rgba(167,139,250,.28)' }}
                                 onMouseEnter={e => (e.currentTarget.style.background = 'rgba(167,139,250,.2)')}
                                 onMouseLeave={e => (e.currentTarget.style.background = 'rgba(167,139,250,.1)')}
-                            ><FiCpu size={15} /> Try Code → Diagram <FiArrowRight size={13} /></button>
+                            ><FiCpu size={15} /> Try Code -&gt; Diagram <FiArrowRight size={13} /></button>
                         </div>
 
                         {/* Study Planner card */}
                         <div className="sk-new-card" style={{ boxShadow: '0 24px 60px rgba(103,232,249,.08)', borderColor: 'rgba(103,232,249,.18)' }}>
                             <div style={{ padding: '28px 28px 18px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', padding: '4px 12px', borderRadius: '999px', background: 'rgba(103,232,249,.1)', color: '#67e8f9', border: '1px solid rgba(103,232,249,.3)', fontSize: '11px', fontWeight: 800, letterSpacing: '.06em', width: 'fit-content' }}>✨ NEW FEATURE</span>
+                                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', padding: '4px 12px', borderRadius: '999px', background: 'rgba(103,232,249,.1)', color: '#67e8f9', border: '1px solid rgba(103,232,249,.3)', fontSize: '11px', fontWeight: 800, letterSpacing: '.06em', width: 'fit-content' }}>[NEW] FEATURE</span>
                                 <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(103,232,249,.1)', color: '#67e8f9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><FiBookOpen size={26} /></div>
                                 <h3 style={{ fontSize: '22px', fontWeight: 800, margin: 0, color: '#e2e8f0' }}>AI Study Planner</h3>
-                                <p style={{ color: 'rgba(148,163,184,.85)', fontSize: '15px', lineHeight: 1.65, margin: 0 }}>Auto-generate a smart, personalized timetable. Weak-subject adaptive, spaced repetition built-in, progress dashboard and streak tracker — works 100% offline.</p>
+                                <p style={{ color: 'rgba(148,163,184,.85)', fontSize: '15px', lineHeight: 1.65, margin: 0 }}>Auto-generate a smart, personalized timetable. Weak-subject adaptive, spaced repetition built-in, progress dashboard and streak tracker -- works 100% offline.</p>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '7px' }}>
                                     {['Spaced Repetition', 'Weak Subject Mode', 'Daily Streak', 'Dashboard', '100% Offline'].map(p => (
                                         <span key={p} className="sk-pill" style={{ background: 'rgba(103,232,249,.08)', color: '#67e8f9', borderColor: 'rgba(103,232,249,.22)' }}>{p}</span>
@@ -198,12 +198,12 @@ const Landing: React.FC = () => {
                                     <div style={{ display: 'flex', gap: '5px' }}>
                                         {['rgba(103,232,249,.5)', 'rgba(103,232,249,.3)', 'rgba(103,232,249,.15)'].map((c, i) => <div key={i} style={{ width: '10px', height: '10px', borderRadius: '50%', background: c }} />)}
                                     </div>
-                                    <span style={{ fontSize: '12px', color: 'rgba(148,163,184,.4)', fontWeight: 600 }}>📅 Mon, 3 Mar</span>
+                                    <span style={{ fontSize: '12px', color: 'rgba(148,163,184,.4)', fontWeight: 600 }}>[Date] Mon, 3 Mar</span>
                                 </div>
                                 <div style={{ padding: '14px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                                     {[
-                                        { l: 'Data Structures · Arrays', t: '2h', type: 'Study', tc: '#a78bfa', tb: 'rgba(167,139,250,.1)', done: true },
-                                        { l: 'DBMS · Normalization', t: '1.5h', type: 'Study', tc: '#a78bfa', tb: 'rgba(167,139,250,.1)', done: false },
+                                        { l: 'Data Structures - Arrays', t: '2h', type: 'Study', tc: '#a78bfa', tb: 'rgba(167,139,250,.1)', done: true },
+                                        { l: 'DBMS - Normalization', t: '1.5h', type: 'Study', tc: '#a78bfa', tb: 'rgba(167,139,250,.1)', done: false },
                                         { l: 'All Subjects Revision', t: '1h', type: 'Revision', tc: '#67e8f9', tb: 'rgba(103,232,249,.1)', done: false },
                                     ].map((r, i) => (
                                         <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '9px 12px', borderRadius: '9px', background: r.done ? 'rgba(255,255,255,.02)' : r.tb, opacity: r.done ? .5 : 1 }}>
@@ -219,7 +219,7 @@ const Landing: React.FC = () => {
                                     ))}
                                     <div style={{ marginTop: '4px', padding: '10px', borderRadius: '9px', background: 'rgba(255,255,255,.03)' }}>
                                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: 'rgba(148,163,184,.55)', marginBottom: '6px' }}>
-                                            <span>🔥 3-day streak</span><span style={{ color: '#67e8f9' }}>33% complete</span>
+                                            <span>[Streak] 3-day streak</span><span style={{ color: '#67e8f9' }}>33% complete</span>
                                         </div>
                                         <div style={{ height: '6px', background: 'rgba(255,255,255,.05)', borderRadius: '999px' }}>
                                             <div style={{ width: '33%', height: '100%', background: 'linear-gradient(90deg,#67e8f9,#a78bfa)', borderRadius: '999px' }} />
@@ -237,7 +237,7 @@ const Landing: React.FC = () => {
                 </div>
             </section>
 
-            {/* ── ALL FEATURES ── */}
+            {/* ALL FEATURES */}
             <section id="all" style={{ padding: '0 24px 80px' }}>
                 <div ref={allRef} className="reveal" style={{ maxWidth: '1100px', margin: '0 auto' }}>
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '5px 14px', borderRadius: '999px', border: '1px solid rgba(167,139,250,.3)', background: 'rgba(167,139,250,.08)', color: '#a78bfa', fontSize: '12px', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', marginBottom: '18px' }}>
@@ -257,16 +257,16 @@ const Landing: React.FC = () => {
                 </div>
             </section>
 
-            {/* ── GET THE APP ── */}
+            {/* GET THE APP */}
             <div style={{ padding: '0 24px 64px', maxWidth: '1100px', margin: '0 auto' }}>
                 <div style={{ borderRadius: '20px', padding: '40px 48px', background: 'linear-gradient(135deg,rgba(134,239,172,.07) 0%,rgba(103,232,249,.04) 100%)', border: '1px solid rgba(134,239,172,.18)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px', position: 'relative', overflow: 'hidden' }}>
                     <div style={{ position: 'absolute', width: 260, height: 260, top: '-30%', right: '5%', borderRadius: '50%', background: 'radial-gradient(circle,rgba(134,239,172,.1) 0%,transparent 70%)', filter: 'blur(50px)', pointerEvents: 'none' }} />
                     <div style={{ position: 'relative' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                            <span style={{ fontSize: '28px' }}>📱</span>
+                            <span style={{ fontSize: '18px', fontWeight: 'bold', color: '#86efac' }}>[Mobile]</span>
                             <span style={{ display: 'inline-flex', alignItems: 'center', padding: '3px 10px', borderRadius: '999px', background: 'rgba(134,239,172,.12)', color: '#86efac', border: '1px solid rgba(134,239,172,.3)', fontSize: '11px', fontWeight: 800 }}>NEW</span>
                         </div>
-                        <h3 style={{ fontSize: 'clamp(20px,3vw,28px)', fontWeight: 900, margin: '0 0 8px' }}>Available on Android, iPhone, Windows &amp; Mac</h3>
+                        <h3 style={{ fontSize: 'clamp(20px,3vw,28px)', fontWeight: 900, margin: '0 0 8px' }}>Available on Android, iPhone, Windows and Mac</h3>
                         <p style={{ color: 'rgba(148,163,184,.8)', fontSize: '14px', margin: 0, maxWidth: '440px', lineHeight: 1.65 }}>Install Sketchbyte as an app on any device in under 60 seconds. No App Store. Fully offline after install.</p>
                     </div>
                     <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', position: 'relative' }}>
@@ -276,7 +276,7 @@ const Landing: React.FC = () => {
                             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 32px rgba(22,163,74,.5)'; }}
                             onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 6px 24px rgba(22,163,74,.35)'; }}
                         >
-                            📥 Download App
+                            [App] Download App
                         </button>
                         <button
                             onClick={() => navigate('/canvas')}
@@ -289,36 +289,34 @@ const Landing: React.FC = () => {
                 </div>
             </div>
 
-
-            {/* ── FINAL CTA ── */}
+            {/* FINAL CTA */}
             <div style={{ padding: '0 24px 80px', maxWidth: '1100px', margin: '0 auto' }}>
                 <div ref={ctaRef} className="reveal" style={{ borderRadius: '24px', padding: '64px 48px', background: 'linear-gradient(135deg,#16103a 0%,#0f1729 100%)', border: '1px solid rgba(167,139,250,.18)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                     <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 0%,rgba(124,58,237,.2) 0%,transparent 60%)', pointerEvents: 'none' }} />
                     <h2 style={{ fontSize: 'clamp(26px,4vw,42px)', fontWeight: 900, margin: '0 0 14px', position: 'relative' }}>Your Complete Visual Study Ecosystem.</h2>
-                    <p style={{ fontSize: '16px', color: 'rgba(148,163,184,.85)', margin: '0 auto 32px', maxWidth: '460px', position: 'relative' }}>Whiteboard · Code Diagrams · Study Planner · Export — all in one place, all free.</p>
+                    <p style={{ fontSize: '16px', color: 'rgba(148,163,184,.85)', margin: '0 auto 32px', maxWidth: '460px', position: 'relative' }}>Whiteboard - Code Diagrams - Study Planner - Export -- all in one place, all free.</p>
                     <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', position: 'relative' }}>
-                        <button className="sk-btn-primary" onClick={() => navigate('/canvas')}>Open Whiteboard →</button>
+                        <button className="sk-btn-primary" onClick={() => navigate('/canvas')}>Open Whiteboard -&gt;</button>
                         <button className="sk-btn-ghost" onClick={() => navigate('/study-planner')}>
                             <FiBookOpen size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} />Study Planner
                         </button>
                         <button className="sk-btn-ghost" onClick={() => navigate('/canvas')} style={{ color: '#a78bfa', borderColor: 'rgba(167,139,250,.35)' }}>
-                            <FiCpu size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} />Code → Diagram
+                            <FiCpu size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} />Code -&gt; Diagram
                         </button>
                     </div>
                 </div>
             </div>
 
-            {/* ── FOOTER ── */}
+            {/* FOOTER */}
             <footer style={{ textAlign: 'center', padding: '36px 24px', borderTop: '1px solid rgba(255,255,255,.06)', color: 'rgba(148,163,184,.5)', fontSize: '13px' }}>
                 <div style={{ fontSize: '18px', fontWeight: 800, marginBottom: '8px' }}>
-                    ✦ <span style={{ background: 'linear-gradient(135deg,#a78bfa,#67e8f9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sketchbyte</span>
+                    * <span style={{ background: 'linear-gradient(135deg,#a78bfa,#67e8f9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sketchbyte</span>
                 </div>
-                <p style={{ margin: '0 0 4px' }}>Built with ❤️ for students and coders · Free forever</p>
-                <p style={{ margin: 0 }}>Founded by <strong style={{ color: 'rgba(167,139,250,.8)' }}>Dhruva M</strong> · Think Without Limits.</p>
+                <p style={{ margin: '0 0 4px' }}>Built with love for students and coders - Free forever</p>
+                <p style={{ margin: 0 }}>Founded by <strong style={{ color: 'rgba(167,139,250,.8)' }}>Dhruva M</strong> - Think Without Limits.</p>
             </footer>
         </div>
     );
-
 };
 
 export default Landing;
