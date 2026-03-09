@@ -5,7 +5,7 @@ import { exportPNG, exportSVG, exportPDF } from '../utils/exportImage';
 import { exportJSON, importJSON } from '../utils/saveLoad';
 import Konva from 'konva';
 import {
-    FiDownload, FiUpload, FiImage, FiCode, FiMenu, FiLogOut, FiUser, FiSun, FiMoon, FiFileText, FiCpu, FiBookOpen
+    FiDownload, FiUpload, FiImage, FiCode, FiMenu, FiLogOut, FiUser, FiSun, FiMoon, FiFileText, FiCpu, FiBookOpen, FiZap
 } from 'react-icons/fi';
 import { useAuthStore } from '../store/authStore';
 import { useThemeStore } from '../store/themeStore';
@@ -127,6 +127,11 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, onOpenTemplates }) => 
                 <button className="header-btn" onClick={() => navigate('/study-planner')} title="AI Study Planner" id="btn-study-planner">
                     <FiBookOpen />
                     <span>Study Planner</span>
+                </button>
+
+                <button className="header-btn" onClick={() => navigate('/flashcards')} title="AI Flashcards" id="btn-flashcards">
+                    <FiZap />
+                    <span>Flashcards</span>
                 </button>
 
                 <div className="export-wrapper">

@@ -6,6 +6,7 @@ import AuthPage from './pages/AuthPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import CodeToDiagramPage from './pages/CodeToDiagramPage';
 import StudyPlannerPage from './pages/StudyPlannerPage';
+import FlashcardsPage from './pages/FlashcardsPage';
 
 
 import { useThemeStore } from './store/themeStore';
@@ -40,6 +41,11 @@ const App: React.FC = () => {
       <Route path="/study-planner" element={
         <ProtectedRoute>
           <StudyPlannerPage />
+        </ProtectedRoute>
+      } />
+      <Route path="/flashcards" element={
+        <ProtectedRoute>
+          <FlashcardsPage />
         </ProtectedRoute>
       } />
       <Route path="*" element={<Navigate to="/" replace />} />

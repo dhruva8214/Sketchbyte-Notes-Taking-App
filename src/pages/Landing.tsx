@@ -136,12 +136,12 @@ const Landing: React.FC = () => {
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '5px 14px', borderRadius: '999px', border: '1px solid rgba(167,139,250,.3)', background: 'rgba(167,139,250,.08)', color: '#a78bfa', fontSize: '12px', fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', marginBottom: '18px' }}>
                         <FiZap size={12} /> What's New
                     </div>
-                    <h2 style={{ fontSize: 'clamp(26px,4vw,40px)', fontWeight: 900, margin: '0 0 12px' }}>Two Powerful New Features</h2>
+                    <h2 style={{ fontSize: 'clamp(26px,4vw,40px)', fontWeight: 900, margin: '0 0 12px' }}>Three Powerful New Features</h2>
                     <p style={{ color: 'rgba(148,163,184,.85)', fontSize: '16px', maxWidth: '520px', lineHeight: 1.6, margin: '0 0 40px' }}>
                         Built specifically for students and developers. Both completely free with no sign-up required.
                     </p>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px' }}>
 
                         {/* Code to Diagram card */}
                         <div className="sk-new-card" style={{ boxShadow: '0 24px 60px rgba(167,139,250,.12)', borderColor: 'rgba(167,139,250,.2)' }}>
@@ -232,6 +232,45 @@ const Landing: React.FC = () => {
                                 onMouseEnter={e => (e.currentTarget.style.background = 'rgba(103,232,249,.18)')}
                                 onMouseLeave={e => (e.currentTarget.style.background = 'rgba(103,232,249,.08)')}
                             ><FiBookOpen size={15} /> Open Study Planner <FiArrowRight size={13} /></button>
+                        </div>
+
+                        {/* AI Flashcards card */}
+                        <div className="sk-new-card" style={{ boxShadow: '0 24px 60px rgba(251,191,36,.08)', borderColor: 'rgba(251,191,36,.2)' }}>
+                            <div style={{ padding: '28px 28px 18px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', padding: '4px 12px', borderRadius: '999px', background: 'rgba(251,191,36,.1)', color: '#fbbf24', border: '1px solid rgba(251,191,36,.3)', fontSize: '11px', fontWeight: 800, letterSpacing: '.06em', width: 'fit-content' }}>[NEW] FEATURE</span>
+                                <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(251,191,36,.1)', color: '#fbbf24', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><FiZap size={26} /></div>
+                                <h3 style={{ fontSize: '22px', fontWeight: 800, margin: 0, color: '#e2e8f0' }}>AI Flashcards</h3>
+                                <p style={{ color: 'rgba(148,163,184,.85)', fontSize: '15px', lineHeight: 1.65, margin: 0 }}>Paste your notes and AI instantly creates study flashcards. Flip cards, Study Mode quiz, and export as PDF or CSV -- all in one place.</p>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '7px' }}>
+                                    {['Groq AI', 'Flip Cards', 'Study Mode', 'Export PDF', 'Export CSV'].map(p => (
+                                        <span key={p} className="sk-pill" style={{ background: 'rgba(251,191,36,.08)', color: '#fbbf24', borderColor: 'rgba(251,191,36,.25)' }}>{p}</span>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="sk-mockup">
+                                <div className="sk-mockup-bar">
+                                    <div style={{ display: 'flex', gap: '5px' }}>
+                                        {['rgba(251,191,36,.5)', 'rgba(251,191,36,.3)', 'rgba(251,191,36,.15)'].map((c, i) => <div key={i} style={{ width: '10px', height: '10px', borderRadius: '50%', background: c }} />)}
+                                    </div>
+                                    <span style={{ fontSize: '12px', color: 'rgba(148,163,184,.4)', fontWeight: 600 }}>Biology Chapter 5</span>
+                                </div>
+                                <div style={{ padding: '14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                    {[
+                                        { q: 'What is photosynthesis?', a: 'Plants convert sunlight into energy', flipped: false },
+                                        { q: 'What is mitosis?', a: 'Cell division producing 2 identical cells', flipped: true },
+                                    ].map((card, i) => (
+                                        <div key={i} style={{ padding: '10px 12px', borderRadius: '10px', background: card.flipped ? 'rgba(251,191,36,.08)' : 'rgba(255,255,255,.03)', border: `1px solid ${card.flipped ? 'rgba(251,191,36,.3)' : 'rgba(255,255,255,.07)'}` }}>
+                                            <div style={{ fontSize: '10px', fontWeight: 700, color: '#fbbf24', opacity: .7, marginBottom: '3px' }}>{card.flipped ? 'ANSWER' : 'QUESTION'}</div>
+                                            <div style={{ fontSize: '12px', color: '#e2e8f0' }}>{card.flipped ? card.a : card.q}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <button className="sk-new-cta-btn" onClick={() => navigate('/flashcards')}
+                                style={{ background: 'rgba(251,191,36,.08)', color: '#fbbf24', border: '1px solid rgba(251,191,36,.25)' }}
+                                onMouseEnter={e => (e.currentTarget.style.background = 'rgba(251,191,36,.18)')}
+                                onMouseLeave={e => (e.currentTarget.style.background = 'rgba(251,191,36,.08)')}
+                            ><FiZap size={15} /> Try AI Flashcards <FiArrowRight size={13} /></button>
                         </div>
                     </div>
                 </div>
