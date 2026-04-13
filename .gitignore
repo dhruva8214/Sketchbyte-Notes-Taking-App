@@ -28,3 +28,9 @@ npm-debug.log*
 *.jks
 keystore-base64.txt
 android-twa/
+
+# Android build outputs — never commit
+android-app/android/app/build/
+android-app/android/app/src/main/assets/
+android-app/android/capacitor-cordova-android-plugins/build/
+android/.idea/caches/

@@ -71,7 +71,22 @@ export const useShapesStore = create<ShapesState>((set, get) => ({
         set({ shapes: [], selectedIds: [] });
     },
 
-    loadShapes: (shapes) => set({ shapes, selectedIds: [], history: [shapes], historyIndex: 0 }),
+    loadShapes: (shapes) => {
+        // Sanitize pencil shapes — convert tuple [x,y,pressure] back to flat [x,y] arrays
+        const sanitized = shapes.map((s) => {
+            if (s.type === 'pencil') {
+                const pts = (s as any).points as any[];
+                if (pts && pts.length > 0 && Array.isArray(pts[0])) {
+                    // Convert [[x,y,p], ...] → [x, y, x2, y2, ...]
+                    const flat: number[] = [];
+                    for (const pt of pts) flat.push(pt[0], pt[1]);
+                    return { ...s, points: flat };
+                }
+            }
+            return s;
+        });
+        set({ shapes: sanitized as Shape[], selectedIds: [], history: [sanitized as Shape[]], historyIndex: 0 });
+    },
 
     undo: () => {
         const { historyIndex, history } = get();
